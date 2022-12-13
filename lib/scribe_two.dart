@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Scribe());
+  runApp(scribe_two());
 }
 
 @override
@@ -11,12 +11,12 @@ void initState() {
 
 bool _toggle = false;
 
-class Scribe extends StatefulWidget {
+class scribe_two extends StatefulWidget {
   @override
-  State<Scribe> createState() => _ScribeState();
+  State<scribe_two> createState() => _scribe_twoState();
 }
 
-class _ScribeState extends State<Scribe> {
+class _scribe_twoState extends State<scribe_two> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,7 +44,7 @@ class _ScribeState extends State<Scribe> {
                 Container(
                   padding: EdgeInsets.all(18.0),
                   alignment: Alignment.centerLeft,
-                  child: Text("Login to your account", style: TextStyle(fontWeight: FontWeight.bold),),
+                  child: Text("Create your account", style: TextStyle(fontWeight: FontWeight.bold),),
                 ),
                 Padding(
                   padding: EdgeInsets.all(16.0),
@@ -71,16 +71,27 @@ class _ScribeState extends State<Scribe> {
                                 : Icons.visibility_off))),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.all(18.0),
-                  alignment: Alignment.centerRight,
-                  child: Text("Forgot Password?", style: TextStyle(color: Colors.orange),),
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: TextField(
+                    obscureText: !_toggle,
+                    decoration: InputDecoration(
+                        prefixIcon: new Icon(Icons.lock),
+                        border: OutlineInputBorder(),
+                        labelText: 'Password',
+                        hintText: 'Enter a Password',
+                        suffixIcon: IconButton(
+                            onPressed: (load),
+                            icon: Icon(_toggle
+                                ? Icons.visibility
+                                : Icons.visibility_off))),
+                  ),
                 ),
                 Padding(
                     padding: EdgeInsets.all(20.0),
                     child: ElevatedButton( style: ElevatedButton.styleFrom(primary: Colors.orange, 
                     minimumSize: const Size.fromHeight(50)),
-                      child: Text('Sign In'),
+                      child: Text('Sign Up'),
                       onPressed: () {},
                     )),
                     Container(
@@ -101,7 +112,7 @@ class _ScribeState extends State<Scribe> {
                     Container(
                        padding: EdgeInsets.all(24.0),
                   alignment: Alignment.center,
-                  child: Text("Dont have an account? Sign Up", style: TextStyle(fontWeight: FontWeight.bold),),
+                  child: Text("Already a member? Sign In", style: TextStyle(fontWeight: FontWeight.bold),),
                     ),
               ]),
             ),
