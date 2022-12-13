@@ -38,7 +38,8 @@ class _ScribeState extends State<Scribe> {
                 ),
                 Padding(
                   padding: EdgeInsets.all(10.0),
-                  child: Text('Orange Scribe', style: TextStyle(color: Colors.orange),) 
+                  child: Text('Orange Scribe', style: TextStyle(color: Colors.orange,
+                   fontWeight: FontWeight.bold),) 
                 ),
                 Container(
                   padding: EdgeInsets.all(18.0),
@@ -76,13 +77,32 @@ class _ScribeState extends State<Scribe> {
                   child: Text("Forgot Password?", style: TextStyle(color: Colors.orange),),
                 ),
                 Padding(
-                    padding: EdgeInsets.all(1.0),
+                    padding: EdgeInsets.all(20.0),
                     child: ElevatedButton( style: ElevatedButton.styleFrom(primary: Colors.orange, 
                     minimumSize: const Size.fromHeight(50)),
                       child: Text('Sign In'),
                       onPressed: () {},
                     )),
-                    Container()
+                    Container(
+                       padding: EdgeInsets.all(24.0),
+                  alignment: Alignment.center,
+                  child: Text("Or sign in with", style: TextStyle(fontWeight: FontWeight.bold),),
+                    ),
+                   Container(
+                    padding: EdgeInsets.all(20.0), alignment: Alignment.center,
+                    child: Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset('assets/images/google.png'),
+                      Image.asset('assets/images/facebook.jpg'),
+                      Image.asset('assets/images/twitter.png')
+                      ],
+                    ),
+                   ),
+                    Container(
+                       padding: EdgeInsets.all(24.0),
+                  alignment: Alignment.center,
+                  child: Text("Dont have an account?", style: TextStyle(fontWeight: FontWeight.bold),),
+                    ),
               ]),
             ),
           )),
