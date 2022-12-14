@@ -90,7 +90,7 @@ class _ScribeState extends State<Scribe> {
                     ),
                    Container(
                     padding: EdgeInsets.all(20.0), alignment: Alignment.center,
-                    child: Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image.asset('assets/images/google.png'),
                       Image.asset('assets/images/facebook.jpg'),
@@ -98,11 +98,17 @@ class _ScribeState extends State<Scribe> {
                       ],
                     ),
                    ),
-                    Container(
-                       padding: EdgeInsets.all(24.0),
+                   Container(
+                  padding: EdgeInsets.all(20.0),
                   alignment: Alignment.center,
-                  child: Text("Dont have an account? Sign Up", style: TextStyle(fontWeight: FontWeight.bold),),
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Dont have an account?', style: TextStyle(color: Colors.black),),
+                      Text(' Sign up', style: TextStyle(color: Colors.orange),)
+                    ],
+                  ),
+                ),
               ]),
             ),
           )),

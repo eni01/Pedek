@@ -37,17 +37,22 @@ class _scribe_twoState extends State<scribe_two> {
                   child: Image.asset('assets/images/bike.jpeg'),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Text('Orange Scribe', style: TextStyle(color: Colors.orange,
-                   fontWeight: FontWeight.bold),) 
-                ),
+                    padding: EdgeInsets.all(10.0),
+                    child: Text(
+                      'Orange Scribe',
+                      style: TextStyle(
+                          color: Colors.orange, fontWeight: FontWeight.bold),
+                    )),
                 Container(
-                  padding: EdgeInsets.all(18.0),
+                  padding: EdgeInsets.all(10.0),
                   alignment: Alignment.centerLeft,
-                  child: Text("Create your account", style: TextStyle(fontWeight: FontWeight.bold),),
+                  child: Text(
+                    "Create your account",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(10.0),
                   child: TextField(
                     decoration: InputDecoration(
                         prefixIcon: Icon(Icons.email_rounded),
@@ -56,7 +61,7 @@ class _scribe_twoState extends State<scribe_two> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(10.0),
                   child: TextField(
                     obscureText: !_toggle,
                     decoration: InputDecoration(
@@ -72,7 +77,7 @@ class _scribe_twoState extends State<scribe_two> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(10.0),
                   child: TextField(
                     obscureText: !_toggle,
                     decoration: InputDecoration(
@@ -89,31 +94,50 @@ class _scribe_twoState extends State<scribe_two> {
                 ),
                 Padding(
                     padding: EdgeInsets.all(20.0),
-                    child: ElevatedButton( style: ElevatedButton.styleFrom(primary: Colors.orange, 
-                    minimumSize: const Size.fromHeight(50)),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.orange,
+                          minimumSize: const Size.fromHeight(50)),
                       child: Text('Sign Up'),
                       onPressed: () {},
                     )),
-                    Container(
-                       padding: EdgeInsets.all(24.0),
+                Container(
+                  padding: EdgeInsets.all(24.0),
                   alignment: Alignment.center,
-                  child: Text("Or sign in with", style: TextStyle(fontWeight: FontWeight.bold),),
-                    ),
-                   Container(
-                    padding: EdgeInsets.all(20.0), alignment: Alignment.center,
-                    child: Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Image.asset('assets/images/google.png'),
+                  child: Text(
+                    "Or sign in with",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(20.0),
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset('assets/images/google.png'),
                       Image.asset('assets/images/facebook.jpg'),
                       Image.asset('assets/images/twitter.png')
-                      ],
-                    ),
-                   ),
-                    Container(
-                       padding: EdgeInsets.all(24.0),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(16.0),
                   alignment: Alignment.center,
-                  child: Text("Already a member? Sign In", style: TextStyle(fontWeight: FontWeight.bold),),
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already a member?',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      Text(
+                        ' Sign in',
+                        style: TextStyle(color: Colors.orange),
+                      )
+                    ],
+                  ),
+                ),
               ]),
             ),
           )),
